@@ -22,7 +22,7 @@ console.log('slider')
 // slidesHtmlElements[indexActive].classList.add('active')
 
 // per selezionare il tasto next uso un querySelector
-// agiungo un addEventListener (click)
+// aggiungo un addEventListener (click)
 // all'indice corrente rimuovo la classe active
 // icremento indexActive ++
 // se l'indice active è  unguale a slideElements length
@@ -30,10 +30,10 @@ console.log('slider')
 
 // all'indice corrente aggiungo la classe active
 
-// per selezionare il tasto next uso un querySelector
+// per selezionare il tasto prev uso un querySelector
 // agiungo un addEventListener (click)
 // all'indice corrente rimuovo la classe active
-// icremento indexActive --
+// decremento indexActive --
 // se l'indice active è  unguale a slideElements length-1
 // indexActive = 5;
 
@@ -99,10 +99,50 @@ slides.forEach(element => {
 // creo una variabile contenente l'indice active (0) let indexActive = 0;
 let indexActive = 0;
 
-// let slidesHtmlElements = [];
+let slidesHtmlElements = [];
 // creo un arrey "slidesHtmlElements" di slide con document.queryselectorAll('.slide')
-slidesHtmlElements=document.querySelectorAll('.slide');
+slidesHtmlElements = document.querySelectorAll('.slide');
 
 // aggiungo all'Array slidesHtmlElements la classe active
 slidesHtmlElements[indexActive].classList.add('active');
 
+// BLOCCO 3
+// per selezionare il tasto next uso un querySelector
+ const rightButton = document.querySelector('.arrow-next');
+
+ // aggiungo un addEventListener (click)
+
+ rightButton.addEventListener('click',function(){
+	// all'indice corrente rimuovo la classe active
+	slidesHtmlElements[indexActive].classList.remove('active');
+	// icremento indexActive ++
+	indexActive++
+	// se l'indice active è  unguale a slideElements length
+	if(indexActive === slidesHtmlElements.length){
+		// indexActive = 0;
+		indexActive = 0;
+		slidesHtmlElements[indexActive].classList.add('active');
+	}else{
+		slidesHtmlElements[indexActive].classList.add('active');
+	}
+ })
+
+//  PREV BUTTON
+const leftButton = document.querySelector('.arrow-prev');
+
+// aggiungo un addEventListener (click)
+
+leftButton.addEventListener('click',function(){
+   // all'indice corrente rimuovo la classe active
+   slidesHtmlElements[indexActive].classList.remove('active');
+   // decremento indexActive --
+   indexActive--
+   // se l'indice active è  unguale a slideElements length
+   if(indexActive === -1){
+	   // indexActive = 4;
+	   indexActive =slidesHtmlElements.length -1;
+	   slidesHtmlElements[indexActive].classList.add('active');
+    }else{
+	slidesHtmlElements[indexActive].classList.add('active');
+   }
+})
