@@ -1,4 +1,4 @@
-// console.log('slider')
+console.log('slider')
 
 // Riprendiamo l’esercizio carosello e rifacciamolo, questa volta usando gli oggetti, prendendo come riferimento il codice che trovate allegato,
 // Bisogna generare il murkup delle slide ciclando l’array di oggetti che trovare nel file js.
@@ -11,11 +11,11 @@
 
 // recupero l'elemento slides wrapper
 // cicliamo gli elementi dell'array con un foreach
-	// effettuare un consol.log per verificare la sintassi si ok
-	// creo una variabile che contiene il template literal di una slide
-	// sostituisco gli elementi statici di html con gli elementi dell'array in dot.notation
-	// aggiungo le slide al slides wrapper (innerHTML+=)
-	
+// effettuare un consol.log per verificare la sintassi si ok
+// creo una variabile che contiene il template literal di una slide
+// sostituisco gli elementi statici di html con gli elementi dell'array in dot.notation
+// aggiungo le slide al slides wrapper (innerHTML+=)
+
 // creo una variabile contenent l'indice active (0) let indexActive = 0;
 // creo un arrey "slidesHtmlElements" di slide con document.queryselectorAll('.slide')
 // aggiungo all'Array slidesHtmlElements la classe active
@@ -23,21 +23,21 @@
 
 // per selezionare il tasto next uso un querySelector
 // agiungo un addEventListener (click)
-	// all'indice corrente rimuovo la classe active
-	// icremento indexActive ++
-	// se l'indice active è  unguale a slideElements length
-		// indexActive = 0;
+// all'indice corrente rimuovo la classe active
+// icremento indexActive ++
+// se l'indice active è  unguale a slideElements length
+// indexActive = 0;
 
-	// all'indice corrente aggiungo la classe active
+// all'indice corrente aggiungo la classe active
 
 // per selezionare il tasto next uso un querySelector
 // agiungo un addEventListener (click)
-	// all'indice corrente rimuovo la classe active
-	// icremento indexActive ++
-	// se l'indice active è  unguale a slideElements length-1
-		// indexActive = 5;
+// all'indice corrente rimuovo la classe active
+// icremento indexActive ++
+// se l'indice active è  unguale a slideElements length-1
+// indexActive = 5;
 
-	// all'indice corrente aggiungo la classe active	
+// all'indice corrente aggiungo la classe active	
 
 
 
@@ -76,8 +76,23 @@ const slides = [
 			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
 	},
 ]
-//  slides.forEach(element =>{
+// recupero l'elemento slides wrapper
+const wrapper = document.querySelector('.slides-wrapper');
+// cicliamo gli elementi dell'array con un foreach
+slides.forEach(element => {
+	// effettuare un consol.log per verificare la sintassi si ok
+	// console.log(element.url,element.title,element.description);
 
-//  })
+	// sostituisco gli elementi statici di html con gli elementi dell'array in dot.notation
+	const listItemEL = `<li class="slide active">
+	<img src="./img/${element.url}" alt="">
+	<div class="slide__content">
+	  <h3 class="slide__title">${element.title}</h3>
+	  <p class="slide__description">${element.description}</p>
+	</div>
+  </li>`
+  // aggiungo le slide al slides wrapper (innerHTML+=)
+  wrapper.innerHTML+=`${listItemEL}`
+})
 
 //  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
