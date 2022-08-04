@@ -16,7 +16,7 @@ console.log('slider')
 // sostituisco gli elementi statici di html con gli elementi dell'array in dot.notation
 // aggiungo le slide al slides wrapper (innerHTML+=)
 
-// creo una variabile contenent l'indice active (0) let indexActive = 0;
+// creo una variabile contenente l'indice active (0) let indexActive = 0;
 // creo un arrey "slidesHtmlElements" di slide con document.queryselectorAll('.slide')
 // aggiungo all'Array slidesHtmlElements la classe active
 // slidesHtmlElements[indexActive].classList.add('active')
@@ -33,7 +33,7 @@ console.log('slider')
 // per selezionare il tasto next uso un querySelector
 // agiungo un addEventListener (click)
 // all'indice corrente rimuovo la classe active
-// icremento indexActive ++
+// icremento indexActive --
 // se l'indice active è  unguale a slideElements length-1
 // indexActive = 5;
 
@@ -85,7 +85,7 @@ slides.forEach(element => {
 
 	// sostituisco gli elementi statici di html con gli elementi dell'array in dot.notation
 	const listItemEL = `<li class="slide active">
-	<img src="./img/${element.url}" alt="">
+	<img src="${element.url}" alt="">
 	<div class="slide__content">
 	  <h3 class="slide__title">${element.title}</h3>
 	  <p class="slide__description">${element.description}</p>
@@ -95,4 +95,14 @@ slides.forEach(element => {
   wrapper.innerHTML+=`${listItemEL}`
 })
 
-//  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// BLOCCO 2
+// creo una variabile contenent l'indice active (0) let indexActive = 0;
+let indexActive = 0;
+
+// let slidesHtmlElements = [];
+// creo un arrey "slidesHtmlElements" di slide con document.queryselectorAll('.slide')
+slidesHtmlElements=document.querySelectorAll('.slide');
+
+// aggiungo all'Array slidesHtmlElements la classe active
+slidesHtmlElements[indexActive].classList.add('active');
+
