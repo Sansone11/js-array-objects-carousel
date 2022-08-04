@@ -84,7 +84,7 @@ slides.forEach(element => {
 	// console.log(element.url,element.title,element.description);
 
 	// sostituisco gli elementi statici di html con gli elementi dell'array in dot.notation
-	const listItemEL = `<li class="slide active">
+	const listItemEL = `<li class="slide">
 	<img src="${element.url}" alt="">
 	<div class="slide__content">
 	  <h3 class="slide__title">${element.title}</h3>
@@ -96,7 +96,7 @@ slides.forEach(element => {
 })
 
 // BLOCCO 2
-// creo una variabile contenent l'indice active (0) let indexActive = 0;
+// creo una variabile contenente l'indice active (0) let indexActive = 0;
 let indexActive = 0;
 
 // let slidesHtmlElements = [];
